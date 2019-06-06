@@ -1,0 +1,27 @@
+<style>
+    html {
+        height: 100%;
+        background-repeat: no-repeat;
+        background: #bdbdbd;
+        position: relative;
+    }
+</style>
+
+<div class="container" id="loginContainer">
+    <div id="login-box">
+        <div class="logo">
+            <h1 class="logo-caption"><span class="tweak">CNS</span> Dashboard</h1>
+        </div><!-- /.logo -->
+        <div class="controls">
+            <input type="text" name="username" placeholder="Username" class="form-control"/>
+            <input type="password" ng-keyup="$event.keyCode == 13 && myFunc()" name="password" placeholder="Password" class="form-control"/>
+            <a ui-sref="dashboard">
+                <button type="button" class="btn btn-default btn-block btn-custom">Login</button>
+            </a>
+
+        </div><!-- /.controls -->
+    </div><!-- /#login-box -->
+</div><!-- /.container -->
+ <!-- To enable the Particle theme un-comment below Line of code -->
+<!-- <div id="particles-js"></div> -->
+

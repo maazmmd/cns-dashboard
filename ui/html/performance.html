@@ -1,0 +1,56 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+<div ng-controller='performanceCtrl'>
+    <div class="row">
+        <div class="col-md-offset-10 col-md-2" style="margin-top: 25px;">
+            <a ui-sref="dashboard">
+                <button type="button" class="btn btn-warning">Back to DashBoard</button>
+            </a>
+        </div>
+    </div>
+    <div ng-show="performanceType == 'all'">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Select Comparison Type: </h5>
+            </div>
+            <div class="col-md-7">
+                <select class="selectpicker" name="data.teamPerformanceType" ng-model="data.teamPerformanceType"
+                        ng-init="data.teamPerformanceType='intra'">
+                    <option value="intra">Domestic Comparison</option>
+                    <option value="inter">International Comparison</option>
+                </select>
+            </div>
+        </div>
+        <div ng-show="data.teamPerformanceType == 'intra'">
+            <div id="intraTeamChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+        <div ng-show="data.teamPerformanceType == 'inter'">
+            <!-- Styled mode pie -->
+            <div id="interTeamChart"></div>
+        </div>
+    </div>
+    <div ng-show="performanceType == 'single'">
+        <div class="row">
+            <div class="col-md-2">
+                <h5>Select Airline: </h5>
+            </div>
+            <div class="col-md-9">
+                <select class="selectpicker" name="data.team" ng-model="data.team" ng-init="data.team='intra'">
+                    <option value="team1">Air Canda</option>
+                    <option value="team2">Emirates</option>
+                    <option value="team3">Delta</option>
+                    <option value="team4">British Airways</option>
+                    <option value="team5">American Airlines</option>
+                    <option value="team6">Lufthansa</option>
+                    <option value="team7">JetBlue Airways</option>
+                </select>
+            </div>
+        </div>
+        <!-- Column with drilldown -->
+        <div id="surveyorPerformanceChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+</div>
+<br>

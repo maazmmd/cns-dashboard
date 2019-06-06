@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+<div ng-controller='dataCollectionCtrl'>
+    <div class="row">
+        <div class="col-md-10">
+            <h3>Data Collection Summary</h3>
+        </div>
+        <div class="col-md-2" style="margin-top: 25px;">
+            <a ui-sref="dashboard">
+                <button type="button" class="btn btn-warning">Back to DashBoard</button>
+            </a>
+        </div>
+    </div>
+    <div ng-show="dataCollectionStatus == 'villageData'">
+        <div id="villageDataChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+    </div>
+    <div ng-show="dataCollectionStatus == 'overview'">
+        <select class="selectpicker" name="data.areaName" ng-model="data.areaName" ng-init="data.areaName=''">
+            <option value="">Please Select Area</option>
+            <option value="378">Mirzanpur (378)</option>
+            <option value="505">Barshi Urban Area 5 (505)</option>
+            <option value="501">Gaikwad Plot, Ward No.1 Part No. 1 (501)</option>
+            <option value="502">Yedai Vihir, Rajput Plot Ward No.1 Part No. 2 (502)</option>
+            <option value="503">Pardeshi Plot Mulge Mala Ward No.1 Part NO.3 (503)</option>
+            <option value="504">Lahuji Chouk Ward No.1 Part No. 3 (504)</option>
+        </select>
+        <div id="eligiblesHHQChart" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+        <br><br>
+        <div id="enumerationChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+</div>
+<br>

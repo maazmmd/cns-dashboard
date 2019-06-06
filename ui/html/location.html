@@ -1,0 +1,39 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.selectpicker').selectpicker();
+	});
+	
+</script>
+<div ng-controller='locationCtrl'>		
+	<div class="row">
+		<div class="col-md-2">
+			<h3>Location</h3>
+		</div>	
+		<div class="col-md-8"  style="margin-top: 15px;">	 
+			<select class="selectpicker" name="data.area" ng-model="data.area" ng-init="data.area='Barshi'" data-style="btn-info">
+				<option value="Barshi">Toronto</option>
+				<option value="Solapur">Vancouver</option>
+				<option value="Alipur">Edmonton</option>
+				<option value="Balewadi">Montreal</option>
+			</select>
+		</div>
+		<div class="col-md-2" style="margin-top: 15px;">
+			<a ui-sref="dashboard">
+				<button type="button" class="btn btn-warning">Back to DashBoard</button>
+			</a>
+		</div>	
+	</div>
+	<div ng-if="data.area == 'Barshi'">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.579351055833!2d-79.62700838450145!3d43.67771757912045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b394ac02dd491%3A0xb41d5de9c4030ec5!2sToronto+Pearson+International+Airport!5e0!3m2!1sen!2sca!4v1543556342699" width="950" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+	<div ng-if="data.area == 'Solapur'">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.2037224870314!2d-123.18370098492878!3d49.19669478478131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54860b348627a39b%3A0xba68ccac86348084!2sVancouver+International+Airport!5e0!3m2!1sen!2sca!4v1543556376931" width="950" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>	
+	</div>
+	<div ng-if="data.area == 'Alipur'">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d76233.71390168999!2d-113.6014744692305!3d53.337822046956745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x539ff79c5822f50f%3A0x7e7e4b0e8527b7ef!2sEdmonton+International+Airport%2C+Nisku%2C+AB!5e0!3m2!1sen!2sca!4v1543556451580" width="950" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+	<div ng-if="data.area == 'Balewadi'">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.2042724874664!2d-73.74767008508235!3d45.465688841366166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc93d7753d8c92b%3A0x1e30a8791014678d!2sMontr%C3%A9al-Pierre+Elliott+Trudeau+International+Airport!5e0!3m2!1sen!2sca!4v1543556490195" width="950" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+</div>
+<br>

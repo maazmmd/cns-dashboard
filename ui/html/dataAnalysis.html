@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+<div ng-controller='dataAnalysisCtrl'>
+    <div class="row">
+        <div class="col-md-offset-10 col-md-2" style="margin-top: 25px;">
+            <a ui-sref="dashboard">
+                <button type="button" class="btn btn-warning">Back to DashBoard</button>
+            </a>
+        </div>
+    </div>
+    <div ng-show="analysisType == 'monthlyReport'">
+        <!-- Update Options after Render -->
+         <h4>Flight Delay statistics</h4>
+        <div id="monthlyReportChart" style="min-width: 320px; max-width: 600px; margin: 0 auto"></div>
+    </div>
+    <div ng-show="analysisType == 'demographic'">
+        <h4>Demographic Info of past years with Domestic and International Passenger Volume</h4>
+        <!-- Stacked Percentage Column -->
+        <div id="demographicReportChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    <div ng-show="analysisType == 'accident'">
+        <h4>Accident Statistics</h4>
+        <!-- Stacked Percentage Column -->
+        <div id="accidentReportChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+</div>
+<br>
